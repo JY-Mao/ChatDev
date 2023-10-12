@@ -246,8 +246,9 @@ class RolePlaying:
                 ChatAgentResponse([], False, {}))
         assistant_msg = self.process_messages(assistant_response.msgs)
         if self.assistant_agent.info:
-            return (ChatAgentResponse([assistant_msg], assistant_response.terminated, assistant_response.info),
-                    ChatAgentResponse([], False, {}))
+            return (
+                ChatAgentResponse([assistant_msg], assistant_response.terminated, assistant_response.info),
+                ChatAgentResponse([], False, {}))
         self.assistant_agent.update_messages(assistant_msg)
 
         if assistant_only:
@@ -260,12 +261,14 @@ class RolePlaying:
         assistant_msg_rst = assistant_msg.set_user_role_at_backend()
         user_response = self.user_agent.step(assistant_msg_rst)
         if user_response.terminated or user_response.msgs is None:
-            return (ChatAgentResponse([assistant_msg], assistant_response.terminated, assistant_response.info),
-                    ChatAgentResponse([user_response], user_response.terminated, user_response.info))
+            return (
+                ChatAgentResponse([assistant_msg], assistant_response.terminated, assistant_response.info),
+                ChatAgentResponse([user_response], user_response.terminated, user_response.info))
         user_msg = self.process_messages(user_response.msgs)
         if self.user_agent.info:
-            return (ChatAgentResponse([assistant_msg], assistant_response.terminated, assistant_response.info),
-                    ChatAgentResponse([user_msg], user_response.terminated, user_response.info))
+            return (
+                ChatAgentResponse([assistant_msg], assistant_response.terminated, assistant_response.info),
+                ChatAgentResponse([user_msg], user_response.terminated, user_response.info))
         self.user_agent.update_messages(user_msg)
 
         return (

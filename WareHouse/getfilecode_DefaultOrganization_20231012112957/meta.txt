@@ -1,0 +1,30 @@
+Task:
+生成一个文件编号软件,对test中的文件进行编码,要求编码包含文件树结构、文件流水、文件版本号等
+
+Config:
+ChatEnvConfig.clear_structure: True
+ChatEnvConfig.git_management: False
+ChatEnvConfig.gui_design: True
+
+
+Roster:
+Chief Executive Officer, Counselor, Chief Human Resource Officer, Chief Product Officer, Chief Technology Officer, Programmer, Code Reviewer, Software Test Engineer, Chief Creative Officer
+
+Modality:
+document
+
+Ideas:
+
+
+Language:
+ Python
+
+Code_Version:
+6.0
+
+Proposed_images:
+0
+
+Incorporated_images:
+0
+

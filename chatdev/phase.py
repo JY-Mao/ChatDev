@@ -117,9 +117,11 @@ class Phase(ABC):
         # the purpose of the chatting in one phase is to get a seminar conclusion
         # there are two types of conclusion
         # 1. with "<INFO>" mark
-        # 1.1 get seminar conclusion flag (ChatAgent.info) from assistant or user role, which means there exist special "<INFO>" mark in the conversation
+        # 1.1 get seminar conclusion flag (ChatAgent.info) from assistant or user role,
+        # which means there exist special "<INFO>" mark in the conversation
         # 1.2 add "<INFO>" to the reflected content of the chat (which may be terminated chat without "<INFO>" mark)
-        # 2. without "<INFO>" mark, which means the chat is terminated or normally ended without generating a marked conclusion, and there is no need to reflect
+        # 2. without "<INFO>" mark, which means the chat is terminated or normally ended without generating a marked conclusion,
+        # and there is no need to reflect
         for i in range(chat_turn_limit):
             # start the chat, we represent the user and send msg to assistant
             # 1. so the input_user_msg should be assistant_role_prompt + phase_prompt
